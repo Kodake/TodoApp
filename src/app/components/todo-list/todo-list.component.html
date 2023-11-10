@@ -18,10 +18,10 @@
 
                             <span [ngClass]="{'completed': todo.completed}">
                                 <ng-container *ngIf="!todo.completed; else completedTodo">
-                                    {{todo.name}}
+                                    <h5>{{todo.name}}</h5>
                                 </ng-container>
                                 <ng-template #completedTodo>
-                                    <del>{{todo.name}}</del>
+                                    <del><h5 class="text-success">{{todo.name}}</h5></del>
                                 </ng-template>
                             </span>
 
