@@ -1,0 +1,8 @@
+<div class="input-group">
+    <input type="text" placeholder="Todo Name" class="form-control form-control-lg"
+        [(ngModel)]="name">
+    <div class="input-group-append">
+        <button type="button" role="button" class="btn btn-success btn-lg" (click)="addTodo()"
+            [disabled]="name === ''">Add</button>
+    </div>
+</div>
