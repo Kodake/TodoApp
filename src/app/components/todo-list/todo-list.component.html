@@ -1,4 +1,4 @@
-<app-todo-header></app-todo-header>
+<app-todo-header [@headerTodoAnimation]></app-todo-header>
 
 <hr>
 
@@ -7,9 +7,9 @@
         <div class="col-lg-8 offset-lg-2">
             <div class="card mt-4">
                 <div class="card-body">
-                    <app-add-todo (add)="addTodo($event)"></app-add-todo>
+                    <app-add-todo [@addTodoAnimation] (add)="addTodo($event)"></app-add-todo>
                     <br>
-                    <h5 *ngIf="todos.length == 0">There's no todos to show.</h5>
+                    <h5 [@noTodoAnimation] *ngIf="todos.length == 0">There's no todos to show.</h5>
                     <ul class="list-group">
                         <li *ngFor="let todo of todos"
                             class="list-group-item d-flex justify-content-between align-items-center">

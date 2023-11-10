@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { addTodoAnimation, headerTodoAnimation, noTodoAnimation } from 'src/app/animations/todo.animation';
 import { Todo } from 'src/app/models/todo.model';
 import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
+  animations: [addTodoAnimation, headerTodoAnimation, noTodoAnimation],
 })
 export class TodoListComponent implements OnInit {
   id = 0;
