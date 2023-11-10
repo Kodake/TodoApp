@@ -7,13 +7,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class AddTodoComponent {
   name = '';
+  description: string = '';
 
-  @Output() add = new EventEmitter<string>();
+  @Output() add = new EventEmitter<{ name: string, description: string }>();
 
   addTodo(): void {
-    if (this.name.trim() !== '') {
-      this.add.emit(this.name);
+    if (this.name.trim() !== '' && this.description.trim() !== '') {
+      this.add.emit({ name: this.name.trim(), description: this.description.trim() });
       this.name = '';
+      this.description = '';
     }
   }
 }

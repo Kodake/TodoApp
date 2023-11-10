@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../models/todo.model';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +12,7 @@ export class TodoService {
   private myAppUrl = environment.apiUrl;
   private myApiUrl = environment.apiEndpoint;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${this.myAppUrl}/${this.myApiUrl}`);
@@ -22,8 +22,13 @@ export class TodoService {
     return this.http.post<Todo>(`${this.myAppUrl}/${this.myApiUrl}`, todo);
   }
 
-  checkTodo(id: number, todo: Todo): Observable<Todo> {
-    return this.http.put<Todo>(`${this.myAppUrl}/${this.myApiUrl}/${id}`, todo);
+  checkTodo(id: number, changes: Partial<Todo>): Observable<Todo> {
+    return this.http.patch<Todo>(`${this.myAppUrl}/${this.myApiUrl}/${id}`, changes)
+      .pipe(
+        map(updatedTodo => {
+          return updatedTodo;
+        })
+      );
   }
 
   deleteTodo(id: number): Observable<void> {

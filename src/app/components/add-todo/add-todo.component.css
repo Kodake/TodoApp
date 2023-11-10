@@ -1,0 +1,7 @@
+.input-style {
+    -webkit-text-stroke: medium;
+}
+
+.input-style:hover {
+    background: rgba(75, 156, 255, 0.438);
+}

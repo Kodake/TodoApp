@@ -1,0 +1,7 @@
+.check-style {
+    transition: transform 0.2s ease-in-out;
+}
+
+.check-style:hover {
+    transform: scale(2);
+}

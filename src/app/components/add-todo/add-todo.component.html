@@ -1,8 +1,12 @@
 <div class="input-group">
-    <input type="text" placeholder="Todo Name" class="form-control form-control-lg"
+    <input type="text" placeholder="Todo Name" class="form-control form-control-lg input-style"
         [(ngModel)]="name">
+    
+    <input type="text" placeholder="Todo Description" class="form-control form-control-lg input-style"
+        [(ngModel)]="description">
+
     <div class="input-group-append">
         <button type="button" role="button" class="btn btn-success btn-lg" (click)="addTodo()"
-            [disabled]="name === ''">Add</button>
+            [disabled]="name.trim() === '' || description.trim() === ''">Add</button>
     </div>
 </div>

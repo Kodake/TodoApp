@@ -1,5 +1,13 @@
 body {
-    background: #56CCF2;
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
-    background: linear-gradient(to right, #2F80ED, #56CCF2);
+    background: #7ab3ff;
+    background: -webkit-linear-gradient(to right, #7ab3ff, rgb(242, 86, 86));
+    background: linear-gradient(to right, #7ab3ff, rgb(242, 86, 86));
+}
+
+.transform-style {
+    transition: transform 0.4s ease-in-out;
+}
+
+.transform-style:hover {
+    transform: scale(1.8);
 }
