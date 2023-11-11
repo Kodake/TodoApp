@@ -23,6 +23,7 @@ import { LoadingInterceptorService } from './services/loading-interceptor.servic
 import { todoReducer } from './store/todo/todo.reducer';
 import { TodoEffects } from './store/todo/todo.effects';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { TodoDetailsComponent } from './components/todo-details/todo-details.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     CheckTodoComponent,
     SpinnerComponent,
     TruncatePipe,
+    TodoDetailsComponent,
   ],
   imports: [
     BrowserModule,

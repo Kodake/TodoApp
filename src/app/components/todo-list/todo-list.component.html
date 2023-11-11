@@ -27,6 +27,8 @@
                                 </ng-template>
                             </span>
 
+                            <app-todo-details [todo]="todo"></app-todo-details>
+
                             <app-delete-todo [todoId]="todo.id" (delete)="deleteTodo($event)"></app-delete-todo>
                         </li>
                     </ul>
