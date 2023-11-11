@@ -4,7 +4,6 @@ import { TodoState } from '../../store/todo/todo.state';
 import * as TodoActions from '../../store/todo/todo.actions';
 import { ToastrService } from 'ngx-toastr';
 import { addTodoAnimation, headerTodoAnimation, noTodoAnimation } from 'src/app/animations/todo.animation';
-import { Todo } from 'src/app/models/todo.model';
 import { TodoService } from 'src/app/services/todo.service';
 import { selectTodos } from 'src/app/store/todo/todo.selectors';
 
