@@ -12,27 +12,23 @@ describe('Todo Actions', () => {
         });
     });
 
-    describe('Todo Actions', () => {
-        describe('deleteTodoSuccess', () => {
-            it('should create an action for deleteTodoSuccess of a todo', () => {
-                const deletedTodoId = 1;
-                const action = deleteTodoSuccess({ id: deletedTodoId });
+    describe('deleteTodoSuccess', () => {
+        it('should create an action for deleteTodoSuccess of a todo', () => {
+            const deletedTodoId = 1;
+            const action = deleteTodoSuccess({ id: deletedTodoId });
 
-                expect(action.type).toBe('[Todo] Delete Todo Success');
-                expect(action.id).toEqual(deletedTodoId);
-            });
+            expect(action.type).toBe('[Todo] Delete Todo Success');
+            expect(action.id).toEqual(deletedTodoId);
         });
     });
 
-    describe('Todo Actions', () => {
-        describe('checkTodoSuccess', () => {
-            it('should create an action for checkTodoSuccess of a todo', () => {
-                const updatedTodo: Todo = { id: 1, name: 'Updated Todo', description: 'Todo Description', completed: true };
-                const action = checkTodoSuccess({ updatedTodo });
+    describe('checkTodoSuccess', () => {
+        it('should create an action for checkTodoSuccess of a todo', () => {
+            const updatedTodo: Todo = { id: 1, name: 'Updated Todo', description: 'Todo Description', completed: true };
+            const action = checkTodoSuccess({ updatedTodo });
 
-                expect(action.type).toBe('[Todo] Check Todo Success');
-                expect(action.updatedTodo).toEqual(updatedTodo);
-            });
+            expect(action.type).toBe('[Todo] Check Todo Success');
+            expect(action.updatedTodo).toEqual(updatedTodo);
         });
     });
 });
