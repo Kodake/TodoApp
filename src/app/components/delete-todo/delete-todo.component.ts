@@ -6,10 +6,31 @@ import Swal from 'sweetalert2';
   templateUrl: './delete-todo.component.html',
   styleUrls: ['./delete-todo.component.css']
 })
-export class DeleteTodoComponent {
-  @Input() todoId?: number;
-  @Output() delete = new EventEmitter<number>();
 
+/**
+ * @component DeleteTodoComponent
+ * @description
+ * This component provides a confirmation dialog for deleting a todo item. It utilizes the SweetAlert2 library
+ * for displaying a customizable confirmation modal. It allows users to confirm or cancel the deletion and emits
+ * the delete event when confirmed.
+ */
+export class DeleteTodoComponent {
+  /**
+   * Input property for passing the ID of the todo item to be deleted.
+   * @type {number | undefined}
+   */
+  @Input() todoId?: number;
+
+  /**
+   * Output event emitter for notifying the parent component when the user confirms the deletion.
+   * Emits the ID of the deleted todo.
+   * @type {EventEmitter<number>}
+   */
+  @Output() delete: EventEmitter<number> = new EventEmitter<number>();
+
+  /**
+   * Opens a confirmation dialog using SweetAlert2 when called. Emits the delete event if the user confirms the deletion.
+   */
   confirmDelete(): void {
     Swal.fire({
       title: "Are you sure to delete this todo?",
@@ -21,7 +42,10 @@ export class DeleteTodoComponent {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
+         // Emit the delete event with the todo ID when confirmed.
         this.delete.emit(this.todoId);
+
+        // Display a success message after successful deletion.
         Swal.fire({
           title: "Deleted!",
           text: "Your todo has been deleted.",
