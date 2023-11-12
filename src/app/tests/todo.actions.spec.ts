@@ -1,4 +1,4 @@
-import { addTodo, addTodoSuccess, checkTodoSuccess, deleteTodoSuccess } from './todo.actions';
+import { addTodoSuccess, checkTodoSuccess, deleteTodoSuccess } from '../store/todo/todo.actions';
 import { Todo } from 'src/app/models/todo.model';
 
 describe('Todo Actions', () => {

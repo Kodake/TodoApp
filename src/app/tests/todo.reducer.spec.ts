@@ -1,6 +1,6 @@
-import { todoReducer } from './todo.reducer';
-import * as TodoActions from './todo.actions';
-import { initialState, todoAdapter } from './todo.state';
+import { todoReducer } from '../store/todo/todo.reducer';
+import * as TodoActions from '../store/todo/todo.actions';
+import { initialState, todoAdapter } from '../store/todo/todo.state';
 
 describe('Todo Reducer', () => {
     describe('addTodoSuccess', () => {
